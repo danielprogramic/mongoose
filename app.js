@@ -1,4 +1,5 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,10 +9,14 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://danielprogramic:123@QWERT@ds117919.mlab.com:17919/smartflorest');
+//
+
+
 
 var app = express();
+
+mongoose.connect('mongodb://danielprogramic:dane45@ds117919.mlab.com:17919/smartflorest');
+
 
 var swig = require('swig');
 app.engine('html', swig.renderFile)
