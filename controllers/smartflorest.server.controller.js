@@ -1,10 +1,33 @@
 var Smart = require('../models/smartflorest.server.model.js');
+//
+exports.list = function(req, res) {
+/*
+    setInterval(function(){
+            console.log('Começa ');
+        }, 1000);  
+*/
 
+    req.app.io.on('connection', function(socket){  
+        data = 'Daniel Douglas Machado';
+        socket.emit('sendatatemp', {arg:data}); 
+    });  
+
+    var query = Smart.find();
+    query.sort({ data: 'desc'})
+        .limit(12)
+        .exec(function(err, results){
+            res.render('index', {title: 'Smart - List', smarts: results});
+
+        });
+
+};
+
+//
 exports.create = function(req, res){
     var entry = new Smart({
-        temperatura: '40',
-        umidade:'30',
-        velocidade: '100'
+        temperatura: req.body.temperatura,
+        umidade:req.body.umidade,
+        velocidade: req.body.velocidade
     })
 
     entry.save();
@@ -12,7 +35,7 @@ exports.create = function(req, res){
     //direcionando para homePage
     res.redirect(301, '/');
 }
-
+//
 exports.getNote = function(req, res){
-    res.render('index', {title: 'Smart - new Note'});  
+    res.render('smartnote', {title: 'Smart - Florest'});  
 }

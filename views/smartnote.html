@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Smart Florest</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Temperatura</a></li>
+                <li class="active"><a href="/newnote">Umidade</a></li>
+                <li><a href="/discuss">Velocidade</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="text-center">
+        <h1>Projeto Experimental!</h1>
+        <p class="lead">Descobrindo a mente</p>
+    </div>
+
+    <form class="form-horizontal" action="smartnote" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Entre com os valores</legend>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="memberName">Temperatura</label>
+                <div class="col-md-4">
+                    <select id="memberName" name="temperatura" class="form-control">
+                        <option value="None">(Select Name)</option>
+                        <option value="40">40</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="project">Umidade</label>
+                <div class="col-md-4">
+                    <select id="project" name="umidade" class="form-control">
+                        <option value="None">(Select Project)</option>
+                        <option value="33">33</option>
+                        <option value="31">31</option>
+                        <option value="24">24</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="project">Velocidade</label>
+                <div class="col-md-4">
+                    <select id="project" name="velocidade" class="form-control">
+                        <option value="None">(Select Project)</option>
+                        <option value="100">100</option>
+                        <option value="89">89</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="btnSaveNote">Salvar Conteúdo</label>
+                <div class="col-md-4">
+                    <button id="btnSaveNote" name="btnSaveNote" class="btn btn-primary" type="submit">Salvar</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+
+</div><!-- /.container -->
+</body>
+</html>

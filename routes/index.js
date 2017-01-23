@@ -4,7 +4,8 @@ var smartCtrl = require('../controllers/smartflorest.server.controller.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  return smartCtrl.list(req, res);
 });
 
 

@@ -11,9 +11,10 @@ var users = require('./routes/users');
 
 //
 
-
-
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+app.io = io;
 
 mongoose.connect('mongodb://danielprogramic:dane45@ds117919.mlab.com:17919/smartflorest');
 
